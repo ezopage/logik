@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Апгрейд сознания</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(circle at center, #1b0c2e 0%, #080312 100%);
+      color: #ffffff;
+    }
+    .wrapper {
+      width: 100%;
+      max-width: 480px; /* Фиксирует ширину на ПК, чтобы не растягивалось */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 25px rgba(138, 75, 255, 0.4);
+      object-fit: cover;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .bio {
+      font-size: 15px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 30px;
+      max-width: 380px;
+    }
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    .btn span.arrow {
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
 
+  <div class="wrapper">
+    <!-- Аватарка (можно заменить ссылку на своё фото) -->
+    <img class="avatar" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=300&auto=format&fit=crop&q=80" alt="Апгрейд сознания">
+
+    <h1>Апгрейд сознания</h1>
+    <p class="bio">Исследование глубин психологии, философии и религии. Присоединяйтесь к нашему пути.</p>
+
+    <div class="links">
+      <a href="https://t.me/ArchitectMind_bot" target="_blank" class="btn">
+        <span>Telegram-бот: Архитектор</span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="https://t.me/ваша_ссылка" target="_blank" class="btn">
+        <span>Telegram-канал</span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="https://youtube.com/@ваша_ссылка" target="_blank" class="btn">
+        <span>YouTube</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
