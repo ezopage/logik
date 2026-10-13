@@ -5,110 +5,185 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Апгрейд сознания</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* Подключаем красивые шрифты */
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;500&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 40px 20px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: radial-gradient(circle at center, #1b0c2e 0%, #080312 100%);
-      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      /* Анимированный мистический фон */
+      background: linear-gradient(-45deg, #0d0a1b, #1a0b2e, #091022, #140822);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
     }
-    .wrapper {
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Звёздная пыль на фоне */
+    .stars {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1;
+      pointer-events: none;
+      background-image: 
+        radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #e1d4ff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #e1d4ff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, #ffffff, rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 200px 200px;
+      opacity: 0.2;
+    }
+
+    /* Главный контейнер (Эффект стекла) */
+    .glass-container {
       width: 100%;
-      max-width: 480px; /* Фиксирует ширину на ПК, чтобы не растягивалось */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      max-width: 450px; /* Сайт больше не разъедется на весь экран! */
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 40px 30px;
       text-align: center;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      z-index: 10;
     }
+
+    /* Аватарка с пульсирующим свечением */
     .avatar {
-      width: 100px;
-      height: 100px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
+      object-fit: cover;
       margin-bottom: 20px;
       border: 2px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 0 25px rgba(138, 75, 255, 0.4);
-      object-fit: cover;
+      box-shadow: 0 0 30px rgba(138, 75, 255, 0.5);
+      animation: pulse 3s infinite alternate;
     }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px rgba(138, 75, 255, 0.2); }
+      100% { box-shadow: 0 0 40px rgba(138, 75, 255, 0.8); }
+    }
+
+    /* Заголовок в книжном философском стиле */
     h1 {
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 10px rgba(255,255,255,0.3);
     }
-    .bio {
-      font-size: 15px;
-      line-height: 1.5;
+
+    .description {
+      font-size: 14px;
       color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 30px;
-      max-width: 380px;
+      line-height: 1.6;
+      margin-bottom: 35px;
+      font-weight: 300;
     }
+
+    /* Кнопки ссылок */
     .links {
-      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
     }
-    .btn {
+
+    .link-btn {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
-      padding: 16px 20px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 14px;
-      color: #ffffff;
+      padding: 16px 24px;
+      border-radius: 16px;
       text-decoration: none;
-      font-size: 16px;
-      font-weight: 500;
-      transition: all 0.25s ease;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s ease;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
     }
-    .btn:hover {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-2px);
+
+    /* Блик при наведении */
+    .link-btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: 0.5s;
     }
-    .btn span.arrow {
-      opacity: 0.6;
+
+    .link-btn:hover::before {
+      left: 100%;
+    }
+
+    .link-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(138, 75, 255, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3), 0 0 15px rgba(138, 75, 255, 0.2);
+    }
+
+    .link-btn span.arrow {
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .link-btn:hover span.arrow {
+      transform: translateX(5px);
     }
   </style>
 </head>
 <body>
-
-  <div class="wrapper">
-    <!-- Аватарка (можно заменить ссылку на своё фото) -->
+  <!-- Слой со звездами -->
+  <div class="stars"></div>
+  
+  <div class="glass-container">
+    <!-- Аватарка (Вставьте сюда ссылку на свое изображение в атрибут src) -->
     <img class="avatar" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=300&auto=format&fit=crop&q=80" alt="Апгрейд сознания">
-
+    
     <h1>Апгрейд сознания</h1>
-    <p class="bio">Исследование глубин психологии, философии и религии. Присоединяйтесь к нашему пути.</p>
+    <p class="description">Исследование глубин психологии, философии и религии.<br>Присоединяйтесь к нашему пути.</p>
 
     <div class="links">
-      <a href="https://t.me/ArchitectMind_bot" target="_blank" class="btn">
+      <!-- Ссылка на бота (уже вставлена) -->
+      <a href="https://t.me/ArchitectMind_bot" target="_blank" class="link-btn">
         <span>Telegram-бот: Архитектор</span>
         <span class="arrow">→</span>
       </a>
-
-      <a href="https://t.me/ваша_ссылка" target="_blank" class="btn">
+      
+      <!-- Ссылка на канал -->
+      <a href="https://t.me/ваш_канал" target="_blank" class="link-btn">
         <span>Telegram-канал</span>
         <span class="arrow">→</span>
       </a>
-
-      <a href="https://youtube.com/@ваша_ссылка" target="_blank" class="btn">
-        <span>YouTube</span>
+      
+      <!-- Ссылка на YouTube -->
+      <a href="https://youtube.com/@ваш_канал" target="_blank" class="link-btn">
+        <span>YouTube-канал</span>
         <span class="arrow">→</span>
       </a>
     </div>
   </div>
-
 </body>
 </html>
